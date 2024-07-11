@@ -28,7 +28,7 @@ const AttendancePage = () => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const response = await fetch("https://divusi.geomethree.studio/api/employee", {
+    const response = await fetch("https://divusi.geomethree.studio/api/attendance", {
       method: "POST",
       body: formData,
     });
