@@ -5,7 +5,7 @@ const EmployeePage = () => {
     event.preventDefault()
  
     const formData = new FormData(event.currentTarget)
-    const response = await fetch('http://divusi.geomethree.studio/employee', {
+    const response = await fetch('http://divusi.geomethree.studio/api/employee', {
       method: 'POST',
       body: formData,
     })
