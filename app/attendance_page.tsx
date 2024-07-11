@@ -47,7 +47,7 @@ const AttendancePage = () => {
               <input
                 type="hidden"
                 name="date"
-                value={date.startDate}
+                value={date.startDate != null ? date.startDate : ''}
               />
               <div className="col-span-full border-1 ring-gray-300">
                 <label htmlFor="">Tanggal</label>
