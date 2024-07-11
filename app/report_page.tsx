@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
 const ReportPage = () => {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState<any>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://divusi.geomethree.studio/");
+      const data = await fetch("http://divusi.geomethree.studio/report");
       const json = await data.json();
       setEmployees(json);
     };
@@ -48,8 +48,8 @@ const ReportPage = () => {
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
-            <tr key={employee.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          {employees.map((employee:any) => (
+            <tr key={employee.nip} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               <th
                 scope="row"
                 className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"

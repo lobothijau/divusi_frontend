@@ -3,7 +3,7 @@ import { useFormState } from "react-dom";
 import Datepicker, { DateRangeType } from "react-tailwindcss-datepicker";
 
 const AttendancePage = () => {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState<any>([]);
   const [date, setDate] = useState({
     startDate: null,
     endDate: null,
@@ -16,7 +16,7 @@ const AttendancePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://divusi.geomethree.studio/");
+      const data = await fetch("http://divusi.geomethree.studio/employee");
       const json = await data.json();
       setEmployees(json);
     };
@@ -28,7 +28,7 @@ const AttendancePage = () => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const response = await fetch("http://divusi.geomethree.studio/", {
+    const response = await fetch("http://divusi.geomethree.studio/employee", {
       method: "POST",
       body: formData,
     });
@@ -72,8 +72,8 @@ const AttendancePage = () => {
                     name="employee_id"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    {employees.map((employee) => (
-                      <option key={employee.id} value={employee.id}>{employee.name}</option>
+                    {employees.map((employee:any) => (
+                      <option key={employee.nip} value={employee.id}>{employee.name}</option>
                     ))}
                   </select>
                 </div>
