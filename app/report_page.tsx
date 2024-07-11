@@ -5,7 +5,7 @@ const ReportPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://divusi.geomethree.studio/api/report");
+      const data = await fetch("https://divusi.geomethree.studio/api/report");
       const json = await data.json();
       setEmployees(json);
     };

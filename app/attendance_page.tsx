@@ -16,7 +16,7 @@ const AttendancePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("http://divusi.geomethree.studio/api/employee");
+      const data = await fetch("https://divusi.geomethree.studio/api/employee");
       const json = await data.json();
       setEmployees(json);
     };
@@ -28,7 +28,7 @@ const AttendancePage = () => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const response = await fetch("http://divusi.geomethree.studio/api/employee", {
+    const response = await fetch("https://divusi.geomethree.studio/api/employee", {
       method: "POST",
       body: formData,
     });
