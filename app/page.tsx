@@ -58,7 +58,7 @@ export default function Home() {
                         key={item.name}
                         href={item.href}
                         aria-current={
-                          item.name == page.name ? item.name : undefined
+                          item.name == page.name ? 'page' : undefined
                         }
                         className={
                           item.name == page.name
@@ -99,7 +99,7 @@ export default function Home() {
                   key={item.name}
                   as="a"
                   href={item.href}
-                  aria-current={item.name == page.name ? item.name : undefined}
+                  aria-current={item.name == page.name ? 'page' : undefined}
                   className={
                     item.name == page.name
                       ? "bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
