@@ -53,6 +53,7 @@ const AttendancePage = () => {
                 <label htmlFor="">Tanggal</label>
                 <div className="mt-2">
                   <Datepicker
+                    value={date}
                     asSingle={true}
                     onChange={handleValueChange}
                   />
